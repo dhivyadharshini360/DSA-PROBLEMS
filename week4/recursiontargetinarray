@@ -1,0 +1,19 @@
+class count {
+    static void traverse(int[] arr,int i,int n,int target){
+        if(arr[i]==target){
+            System.out.println(i);
+        }
+        else{
+            traverse(arr,i+1,n,target);
+
+        }
+    }
+    
+    public static void main(String[] args) {
+       int[] arr={1,2,3,4,5};
+        int i=0;
+        int n=arr.length-1;
+        int target=5;
+        traverse(arr,i,n,target);
+    }
+}
