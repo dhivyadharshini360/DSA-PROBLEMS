@@ -1,0 +1,16 @@
+class count {
+    static int traverse(int i,int a,int b){
+        if(i>b){
+            return 1;
+        }
+        else{
+            return a*traverse(i+1,a,b);
+        }
+    }
+    public static void main(String[] args) {
+        int a=2;
+        int b=3;
+        int i=1;
+        System.out.println(traverse(i,a,b));
+    }
+}
