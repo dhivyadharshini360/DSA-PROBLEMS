@@ -1,0 +1,10 @@
+class Solution {
+    long sumOfFifthPowers(long N) {
+        long sum=0;
+        for(long i=1;i<=N;i++){
+            long prod=i*i*i*i*i;
+            sum=sum+prod;
+        }
+        return sum;
+    }
+}
