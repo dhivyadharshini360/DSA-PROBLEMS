@@ -1,0 +1,18 @@
+class count {
+    static int traverse(int[] arr,int i,int n){
+        if(i>n){
+            return 0;
+        }
+        else{
+            return arr[i]+traverse(arr,i+1,n);
+
+        }
+    }
+    
+    public static void main(String[] args) {
+       int[] arr={1,2,3,4,5};
+        int i=0;
+        int n=arr.length-1;
+        System.out.println(traverse(arr,i,n));
+    }
+}
