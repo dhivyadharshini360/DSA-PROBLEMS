@@ -1,0 +1,22 @@
+class Solution {
+    static ArrayList<Integer> sieveOfEratosthenes(int n) {
+        ArrayList<Integer> lit =new ArrayList<>(); 
+        ArrayList<Boolean> isprime =new ArrayList<>(); 
+        for(int l=0;l<=n;l++){
+            isprime.add(true);
+        }
+        for(int i=2;i*i<=n;i++){
+            if(isprime.get(i)){
+                for(int j=i*2;j<=n;j=j+i){
+                    isprime.set(j,false);
+                }
+            }
+        }
+        for(int k=2;k<=n;k++){
+            if(isprime.get(k)){
+                lit.add(k);
+            }
+        }
+        return lit;
+    }
+}
