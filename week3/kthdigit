@@ -1,0 +1,16 @@
+class Solution {
+    static long kthDigit(int a, int b, int k) {
+        // code here
+        
+long kt=1;
+        for(int i=1;i<=b;i++){
+            kt=kt*a;
+        }
+        long rem=0;
+        for(int i=1;i<=k;i++){
+            rem=kt%10;
+            kt=kt/10;
+        }
+        return rem;
+    }
+}
