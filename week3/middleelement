@@ -1,0 +1,12 @@
+class Solution {
+    int middle(int a, int b, int c) {
+    int mid=a;
+    if((b>a&&b<c) || (b<a&&b>c)){
+        mid=b;
+    }
+    if((c<a&&c>b)||(c>a&&c<b)){
+        mid=c;
+    }
+    return mid;
+    }
+}
