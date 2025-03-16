@@ -1,0 +1,12 @@
+class Solution {
+    static long squaresDiff(int N){
+        long sum=0;
+        long sq=0;
+        for(int i=1;i<=N;i++){
+            long prod=i*i;
+            sum=sum+prod;
+            sq=sq+i;
+        }
+        return (sq*sq)-sum;
+    }
+}
