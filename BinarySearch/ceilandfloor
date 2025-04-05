@@ -1,0 +1,42 @@
+class Solution{
+
+
+public int[] getFloorAndCeil(int x, int[] arr) {
+    Arrays.sort(arr); // Ensure the array is sorted
+    int floor = -1;
+    int ceil = -1;
+    
+    // Edge cases
+    if (arr.length == 0) {
+        return new int[]{-1, -1};
+    }
+    if (x < arr[0]) {
+        ceil = arr[0];
+        return new int[]{-1, ceil};
+    }
+    if (x > arr[arr.length - 1]) {
+        floor = arr[arr.length - 1];
+        return new int[]{floor, -1};
+    }
+    
+    int start = 0;
+    int end = arr.length - 1;
+    
+    while (start <= end) {
+        int mid = start + (end - start) / 2;
+        
+        if (arr[mid] == x) {
+            floor = arr[mid];
+            ceil = arr[mid];
+            return new int[]{floor, ceil};
+        } else if (arr[mid] < x) {
+            start = mid + 1;
+        } else {
+            end = mid - 1;
+        }
+    }
+    floor=arr[end];
+    ceil=arr[start];
+    return new int[]{floor, ceil};
+}
+}
