@@ -1,0 +1,9 @@
+    int thirdLargest(int arr[]) {
+       Arrays.sort(arr);
+       int thirdlargest=arr[arr.length - 3];
+       if(arr.length < 3){
+           return -1;
+       }
+       return thirdlargest;
+    }
+}
