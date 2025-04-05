@@ -1,0 +1,24 @@
+class Solution {
+    public static String reverseString(String s) {
+        // Convert string to character array
+        char[] ss = s.toCharArray();
+
+        int i = 0;
+        int j = ss.length - 1;
+
+        // Reverse the character array
+        while (i < j) {
+            // Swap characters at indices i and j
+            char temp = ss[i];
+            ss[i] = ss[j];
+            ss[j] = temp;
+
+            i++;
+            j--;
+        }
+
+        // Convert the character array back to a string
+        s = new String(ss);
+        return s;
+    }
+}
