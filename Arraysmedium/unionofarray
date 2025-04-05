@@ -1,0 +1,25 @@
+class Solution {
+    public static int findUnion(int a[], int b[]) {
+        // code here
+        int[] res=new int[a.length+b.length];
+        int k=0;
+        k=unionarray(a,res,k);
+        k=unionarray(b,res,k);
+        return k;
+    }
+    public static int unionarray(int[] arr,int[] res,int k){
+        for(int i=0;i<arr.length;i++){
+            int flag=1;
+            for(int j=0;j<k;k++){
+                if(arr[i]==res[j]){
+                    flag=0;
+                    break;
+                }
+            }
+            if(flag==1){
+                res[k++]=arr[i];
+            }
+        }
+        return k;
+    }
+}
