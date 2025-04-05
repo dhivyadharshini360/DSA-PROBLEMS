@@ -1,0 +1,42 @@
+class Solution {
+    public int findKRotation(List<Integer> arr) {
+        // Call the helper function to count the rotations
+        return countRotations(arr);
+    }
+
+    // Helper function to count the rotations
+    int countRotations(List<Integer> arr) {
+        int start = 0;
+        int end = arr.size() - 1;
+
+        // Edge case: If the array is not rotated, return 0
+        if (arr.get(start) <= arr.get(end)) {
+            return 0;
+        }
+
+        // Binary search to find the index of the smallest element (pivot)
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            // Check if mid is the minimum element
+            // Check if mid is the smallest element
+            if (mid > 0 && arr.get(mid) < arr.get(mid - 1)) {
+                return mid;  // Return the index of the minimum element
+            }
+            if (arr.get(mid) > arr.get(mid + 1)) {
+                return mid + 1;  // The next element is smaller, so return mid + 1
+            }
+
+            // If the left half is sorted, search in the right half
+            if (arr.get(start) <= arr.get(mid)) {
+                start = mid + 1;
+            }
+            // If the right half is sorted, search in the left half
+            else {
+                end = mid - 1;
+            }
+        }
+
+        return 0;  // If no rotation, return 0
+    }
+}
