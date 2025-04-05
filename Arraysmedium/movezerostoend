@@ -1,0 +1,19 @@
+
+class Solution {
+    void pushZerosToEnd(int[] arr) {
+        int n = arr.length;
+        int count = 0;  // Variable to track the position to insert non-zero elements
+        
+        // Move non-zero elements to the front
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                arr[count++] = arr[i];  // Place non-zero element at the 'count' index
+            }
+        }
+        
+        // Fill the remaining array with zeros
+        while (count < n) {
+            arr[count++] = 0;  // Place zeros after all non-zero elements
+        }
+    }
+}
