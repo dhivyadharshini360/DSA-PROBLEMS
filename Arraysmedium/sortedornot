@@ -1,0 +1,15 @@
+class Solution {
+    public boolean arraySortedOrNot(int[] arr) {
+        // code her
+        int count=0;
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]>=arr[i-1]){
+                count++;
+            }
+            else{
+                return false;
+            }
+        }
+        return true;
+    }
+}
