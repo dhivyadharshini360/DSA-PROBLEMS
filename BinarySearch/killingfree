@@ -1,0 +1,32 @@
+class Solution {
+    long killinSpree(long n) {
+        long start = 1;
+        long end = (long) 1e6;  
+        long ans = 0;
+
+        while (start <= end) {
+            long mid = start + (end - start) / 2;
+
+            long a = mid;
+            long b = mid + 1;
+            long c = 2 * mid + 1;
+
+            
+            if (b != 0 && c != 0 && a > (6 * n) / (b * c)) {
+                end = mid - 1;
+                continue;
+            }
+
+            long sum = (a * b * c) / 6;
+
+            if (sum <= n) {
+                ans = mid;
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+
+        return ans;
+    }
+}
